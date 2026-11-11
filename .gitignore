@@ -2,11 +2,11 @@
 .venv*/
 
 # generated / downloaded (models, audio, caches, translations, books)
-data/
-books/
+/data/
+/books/
 
 __pycache__/
 *.egg-info/
 
-# чернетки
+# scratch
 scratch_drift.json

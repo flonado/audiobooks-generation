@@ -1,50 +1,54 @@
 # audiobooks
 
-Книга (fb2 / epub / pdf) → переклад (Lapa LLM, за потреби) → озвучення → `.m4b`.
+Book (fb2 / epub / pdf) → translation (Lapa LLM, optional) → speech synthesis → `.m4b`.
 
-## Структура
+## Layout
 
 ```
-books/                 вхідні книги (.fb2, .epub, .pdf)            [не в git]
-configs/               yaml-конфіги збирання .m4b, glossary/ для перекладу
+books/                 input books (.fb2, .epub, .pdf)                 [not in git]
+configs/               yaml configs for building .m4b, glossary/ for translation
 src/audiobooks/
-  books/               читання форматів: fb2, epub, pdf, папка з перекладом
-  translate/lapa.py    переклад через llama.cpp (llama-server) + Lapa LLM
-  tts/gemini.py        озвучення Gemini TTS (кеш, поділ шматків, відновлення)
-  tts/local.py         локальні рушії: piper_engine, ukrainian_tts_engine, styletts2_engine
-  m4b.py               збирання .m4b (ffmpeg, глави)
-  cli.py               команда `audiobook`
-tools/                 допоміжні скрипти (діагностика промптів, висота голосів)
-data/                  усе згенероване й завантажене                [не в git]
-  cache/               gemini/ (шматки аудіо), translate/ (шматки перекладу)
-  models/              piper/, ukrainian-tts/, styletts2/, lapa/, llama.cpp/
-  output/              gemini/, local/, samples/ (озвучені розділи)
-  translations/        <книга>/NN_<назва>.txt (переклад по розділах)
-  audiobooks/          готові .m4b
+  books/               format readers: fb2, epub, pdf, folder of translated chapters
+  translate/lapa.py    translation via llama.cpp (llama-server) + Lapa LLM
+  tts/gemini.py        Gemini TTS synthesis (cache, chunk splitting, resume)
+  tts/local.py         local engines: piper_engine, ukrainian_tts_engine, styletts2_engine
+  m4b.py               .m4b assembly (ffmpeg, chapters)
+  cli.py               the `audiobook` command
+tools/                 helper scripts (prompt diagnostics, voice pitch, voice cloning)
+data/                  everything generated or downloaded              [not in git]
+  cache/               gemini/ (audio chunks), translate/ (translation chunks)
+  models/              piper/, ukrainian-tts/, styletts2/, higgs3/, lapa/, llama.cpp/
+  output/              gemini/, local/, samples/ (synthesized chapters)
+  translations/        <book>/NN_<title>.txt (translation, one file per chapter)
+  audiobooks/          finished .m4b files
 ```
 
-## Середовища
+## Environments
 
-Рушії мають несумісні залежності, тому живуть в окремих venv. Пакет ставиться в кожен як `-e . --no-deps`.
+The engines have incompatible dependencies, so each lives in its own venv. The package is installed into each one as `-e . --no-deps`.
 
-| venv | призначення |
+| venv | purpose |
 |---|---|
-| системний Python | gemini, m4b, chapters, translate (потрібні `pyyaml`, `google-genai`, `imageio-ffmpeg`) |
+| system Python | gemini, m4b, chapters, translate (needs `pyyaml`, `google-genai`, `imageio-ffmpeg`) |
 | `.venv-tts` | `local --engine piper` / `ukrainian-tts` |
 | `.venv-styletts` | `local --engine styletts2` |
-| `.venv-higgs` | `local --engine higgs3` (Higgs Audio v3, клонування за зразком; ваги в `data/models/higgs3/`, на CPU ~8× повільніше за реальний час; голоси: `tools/make_higgs_voice.py`, проба: `tools/higgs_monogatari_test.py`) |
+| `.venv-higgs` | `local --engine higgs3` (Higgs Audio v3, voice cloning from a sample; weights in `data/models/higgs3/`; on CPU about 8× slower than real time; voices: `tools/make_higgs_voice.py`, quick test: `tools/higgs_monogatari_test.py`) |
 
-## Команди
+The Higgs weights are licensed for non-commercial use only, and a voice may be cloned only with the speaker's permission.
+
+## Commands
 
 ```powershell
-audiobook chapters "<книга>"                                  # розділи й номери
-audiobook translate "<книга>.epub" -c 1 --first-chars 1800   # тест: перші ~1800 символів
-audiobook translate "<книга>.epub" -c 1-3                    # переклад розділів
-audiobook gemini <книга або папка перекладу> -c 4 --model gemini-3.8-flash-tts
-.venv-tts\Scripts\audiobook local <книга> -c 4 --engine piper --voice tetiana
-.venv-styletts\Scripts\audiobook local <папка перекладу> -c 1 --engine styletts2 --voice "Тетяна Гончарова"
-.venv-tts\Scripts\audiobook sample <книга> --chapter 3        # порівняння голосів
-audiobook m4b configs\audiobook.yaml                          # збирання .m4b
+audiobook chapters "<book>"                                  # chapters and their numbers
+audiobook translate "<book>.epub" -c 1 --first-chars 1800   # test: first ~1800 characters
+audiobook translate "<book>.epub" -c 1-3                    # translate chapters
+audiobook gemini <book or translation folder> -c 4 --model gemini-3.8-flash-tts
+.venv-tts\Scripts\audiobook local <book> -c 4 --engine piper --voice tetiana
+.venv-styletts\Scripts\audiobook local <translation folder> -c 1 --engine styletts2 --voice "Тетяна Гончарова"
+.venv-tts\Scripts\audiobook sample <book> --chapter 3        # compare voices
+audiobook m4b configs\audiobook.yaml                          # assemble the .m4b
 ```
 
-`<книга>` — файл із `books/`, шлях, або назва папки з `data/translations/` (тоді береться переклад).
+`<book>` is a file from `books/`, a path, or the name of a folder under `data/translations/` (in which case the translation is used).
+
+Set `GEMINI_API_KEY` in the environment before using the `gemini` command.
