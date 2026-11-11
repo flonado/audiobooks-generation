@@ -1,0 +1,12 @@
+# virtual environments
+.venv*/
+
+# generated / downloaded (models, audio, caches, translations, books)
+data/
+books/
+
+__pycache__/
+*.egg-info/
+
+# чернетки
+scratch_drift.json

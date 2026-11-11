@@ -1,0 +1,45 @@
+output: data/audiobooks/Na_volyu(1-20)_clean.m4b
+title: На волю!
+author: Ерін Гантер
+bitrate: 64k
+chapters:
+- file: data/output/m4b_clean/01_Громадянство_gemini-3.8-flash-tts_Aoede_clean.wav
+  title: Громадянство
+- file: data/output/m4b_clean/02_Пролог_gemini-3.1-flash-tts-preview_Aoede_clean.wav
+  title: Пролог
+- file: data/output/m4b_clean/03_Розділ_1_clean.wav
+  title: Розділ 1
+- file: data/output/m4b_clean/04_Розділ_2_gemini-3.8-flash-lite-tts_Aoede_2_clean.wav
+  title: Розділ 2
+- file: data/output/m4b_clean/05_Розділ_3_gemini-3.8-flash-lite-tts_Aoede_clean.wav
+  title: Розділ 3
+- file: data/output/m4b_clean/06_Розділ_4_styletts2_Марічка_Штирбулова_clean.wav
+  title: Розділ 4
+- file: data/output/m4b_clean/07_Розділ_5_styletts2_Марічка_Штирбулова_v_clean.wav
+  title: Розділ 5
+- file: data/output/m4b_clean/08_Розділ_6_styletts2_Марічка_Штирбулова_clean.wav
+  title: Розділ 6
+- file: data/output/m4b_clean/09_Розділ_7_styletts2_Марічка_Штирбулова_clean.wav
+  title: Розділ 7
+- file: data/output/m4b_clean/10_Розділ_8_styletts2_Марічка_Штирбулова_clean.wav
+  title: Розділ 8
+- file: data/output/m4b_clean/11_Розділ_9_styletts2_Марічка_Штирбулова_clean.wav
+  title: Розділ 9
+- file: data/output/m4b_clean/12_Розділ_10_styletts2_Марічка_Штирбулова_clean.wav
+  title: Розділ 10
+- file: data/output/m4b_clean/13_Розділ_11_styletts2_Марічка_Штирбулова_clean.wav
+  title: Розділ 11
+- file: data/output/m4b_clean/14_Розділ_12_styletts2_Марічка_Штирбулова_clean.wav
+  title: Розділ 12
+- file: data/output/m4b_clean/15_Розділ_13_styletts2_Марічка_Штирбулова_clean.wav
+  title: Розділ 13
+- file: data/output/m4b_clean/16_Розділ_14_styletts2_Марічка_Штирбулова_clean.wav
+  title: Розділ 14
+- file: data/output/m4b_clean/17_Розділ_15_styletts2_Марічка_Штирбулова_clean.wav
+  title: Розділ 15
+- file: data/output/m4b_clean/18_Розділ_1б_styletts2_Марічка_Штирбулова_clean.wav
+  title: Розділ 16
+- file: data/output/m4b_clean/19_Розділ_17_styletts2_Марічка_Штирбулова_clean.wav
+  title: Розділ 17
+- file: data/output/m4b_clean/20_Розділ_18_styletts2_Марічка_Штирбулова_clean.wav
+  title: Розділ 18

@@ -1,0 +1,46 @@
+output: data/audiobooks/Na_volyu(1-20).m4b
+title: На волю!
+author: Ерін Гантер
+bitrate: 64k
+
+chapters:
+  - file: data/output/gemini/01_Громадянство_gemini-3.8-flash-tts_Aoede.wav
+    title: Громадянство
+  - file: data/output/gemini/02_Пролог_gemini-3.1-flash-tts-preview_Aoede.wav
+    title: Пролог
+  - file: data/output/gemini/03_Розділ_1.wav
+    title: Розділ 1
+  - file: data/output/gemini/04_Розділ_2_gemini-3.8-flash-lite-tts_Aoede_2.wav
+    title: Розділ 2
+  - file: data/output/gemini/05_Розділ_3_gemini-3.8-flash-lite-tts_Aoede.wav
+    title: Розділ 3
+  - file: data/output/local/06_Розділ_4_styletts2_Марічка_Штирбулова.wav
+    title: Розділ 4
+  - file: data/output/local/07_Розділ_5_styletts2_Марічка_Штирбулова_v.wav
+    title: Розділ 5
+  - file: data/output/local/08_Розділ_6_styletts2_Марічка_Штирбулова.wav
+    title: Розділ 6
+  - file: data/output/local/09_Розділ_7_styletts2_Марічка_Штирбулова.wav
+    title: Розділ 7
+  - file: data/output/local/10_Розділ_8_styletts2_Марічка_Штирбулова.wav
+    title: Розділ 8
+  - file: data/output/local/11_Розділ_9_styletts2_Марічка_Штирбулова.wav
+    title: Розділ 9
+  - file: data/output/local/12_Розділ_10_styletts2_Марічка_Штирбулова.wav
+    title: Розділ 10
+  - file: data/output/local/13_Розділ_11_styletts2_Марічка_Штирбулова.wav
+    title: Розділ 11
+  - file: data/output/local/14_Розділ_12_styletts2_Марічка_Штирбулова.wav
+    title: Розділ 12
+  - file: data/output/local/15_Розділ_13_styletts2_Марічка_Штирбулова.wav
+    title: Розділ 13
+  - file: data/output/local/16_Розділ_14_styletts2_Марічка_Штирбулова.wav
+    title: Розділ 14
+  - file: data/output/local/17_Розділ_15_styletts2_Марічка_Штирбулова.wav
+    title: Розділ 15
+  - file: data/output/local/18_Розділ_1б_styletts2_Марічка_Штирбулова.wav
+    title: Розділ 16
+  - file: data/output/local/19_Розділ_17_styletts2_Марічка_Штирбулова.wav
+    title: Розділ 17
+  - file: data/output/local/20_Розділ_18_styletts2_Марічка_Штирбулова.wav
+    title: Розділ 18

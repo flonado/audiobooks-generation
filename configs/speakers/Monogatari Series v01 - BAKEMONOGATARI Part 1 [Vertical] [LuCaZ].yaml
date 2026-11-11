@@ -1,0 +1,22 @@
+# Нотатки для моделі, що розмічає мовців. Англійською: так модель точніше працює з оригіналом.
+# Відредагуйте, якщо щось неточно (стать, характер, хто присутній у сцені): це напряму впливає на розмітку.
+narrator: Araragi   # оповідь від першої особи; «I» у тексті = Арараґі
+
+cast:
+  Araragi: "male, 18, high-school student, narrator ('I'). Sarcastic, banters with everyone. Calls Oshino 'Oshino', Hachikuji 'Hachikuji'."
+  Hanekawa: "female, Araragi's classmate and class president, braids and glasses, kind, calm, very smart."
+  Senjogahara: "female, Hitagi Senjogahara, classmate, cold, sharp-tongued, deadpan, long insulting remarks, fragile health, uses a stapler as a weapon."
+  Hachikuji: "female, Mayoi Hachikuji, around ten years old (an elementary school girl with a big backpack), chatty, playful, loves wordplay, deliberately mispronounces names (Araragi -> 'Arararagi', 'Araragi-san' -> 'Aragagi'), calls Araragi 'Mr. Araragi'."
+  Oshino: "male, Meme Oshino, middle-aged, Hawaiian shirt, lives in an abandoned cram school, expert on oddities, relaxed and ironic, calls Araragi 'Araragi-kun' / 'Koyomi'."
+  Karen: "female, Araragi's younger sister, fiery, martial arts, energetic."
+  Tsukihi: "female, Araragi's youngest sister, calm and sleepy-type, a bit of a trickster."
+  Shinobu: "female, ancient vampire in the body of a little blonde girl, speaks in archaic haughty manner, rarely speaks in this volume."
+  Other: "any other person (a teacher, a stranger, a shop clerk, a voice in a flashback)."
+
+story: |
+  Bakemonogatari volume 1 has two arcs. HITAGI CRAB (chapters 1-8): Araragi, who survived a vampire attack in spring, catches classmate
+  Senjogahara falling from the stairs and finds she weighs almost nothing: a crab oddity took her weight. He brings her to Meme Oshino
+  and, with Hanekawa's help, the crab is dealt with; Senjogahara becomes close to Araragi.
+  MAYOI SNAIL (chapters 9-17): on Mother's Day Araragi meets a girl with a big backpack, Mayoi Hachikuji, who cannot reach her mother's
+  home; with Senjogahara they keep getting lost; Oshino explains she is a snail ghost and cannot find the way because she does not
+  want to go home. Afterword is the author's comments.

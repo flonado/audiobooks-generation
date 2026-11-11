@@ -1,0 +1,20 @@
+# Конфіг для `audiobook m4b`. Шляхи рахуються відносно кореня проєкту.
+output: data/audiobooks/Na_volyu(1-5).m4b   # куди зберегти готовий файл
+title: На волю!                             # назва книги
+author: Ерін Гантер
+# narrator: Gemini TTS (Aoede)              # необов'язково
+# cover: books/cover.jpg                    # необов'язково, jpg або png
+bitrate: 64k                                # для мови достатньо 48k-64k
+
+# Розділи йдуть у тому порядку, в якому записані тут.
+chapters:
+  - file: data/output/gemini/01_Громадянство_gemini-3.8-flash-tts_Aoede.wav
+    title: Громадянство
+  - file: data/output/gemini/02_Пролог_gemini-3.1-flash-tts-preview_Aoede.wav
+    title: Пролог
+  - file: data/output/gemini/03_Розділ_1.wav
+    title: Розділ 1
+  - file: data/output/gemini/04_Розділ_2_gemini-3.8-flash-lite-tts_Aoede_2.wav
+    title: Розділ 2
+  - file: data/output/gemini/05_Розділ_3_gemini-3.8-flash-lite-tts_Aoede.wav
+    title: Розділ 3
