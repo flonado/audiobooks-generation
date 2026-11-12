@@ -208,7 +208,7 @@ class StyleTTS2Engine:
                 if ps:
                     tokens = self.model.tokenizer.encode(ps)
                     if i:
-                        wavs.append(pause.to(self.style.device))
+                        wavs.append(pause)  # усі шматки лежать на CPU (_render(...).cpu()), тож і пауза має бути там
                     wavs.append(self._render(tokens).reshape(-1).cpu())
         audio = self.torch.concatenate(wavs).cpu().numpy()
         return (np.clip(audio, -1.0, 1.0) * 32767 * 0.9).astype(np.int16).tobytes()

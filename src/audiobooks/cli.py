@@ -23,6 +23,7 @@ def _add_local_tuning(p: argparse.ArgumentParser):
     p.add_argument("--noise-w", type=float, help="piper: менше = рівніший ритм (за замовчуванням 0.8)")
     p.add_argument("--volume", type=float, default=0.85, help="piper: гучність, <1 залишає запас від кліпінгу")
     p.add_argument("--max-chars", type=int, help="макс. довжина фрагмента (за замовчуванням залежить від рушія)")
+    p.add_argument("--device", help="styletts2, higgs3: cpu | cuda | xpu (за замовчуванням cpu)")
 
 
 def build_parser() -> argparse.ArgumentParser:

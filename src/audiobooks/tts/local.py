@@ -45,7 +45,10 @@ def synthesize_text(eng, text: str, max_chars: int | None = None, label: str = "
 
 
 def _tuning(args) -> dict:
-    return {"noise_scale": args.noise_scale, "noise_w": args.noise_w, "volume": args.volume}
+    tuning = {"noise_scale": args.noise_scale, "noise_w": args.noise_w, "volume": args.volume}
+    if getattr(args, "device", None):
+        tuning["device"] = args.device
+    return tuning
 
 
 def run(args):
